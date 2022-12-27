@@ -1,6 +1,7 @@
 package com.exacta.exacta.service
 
 import com.exacta.exacta.dto.SpendingCreationDto
+import com.exacta.exacta.dto.SpendingListByUserNameDto
 import com.exacta.exacta.dto.SpendingServiceListResponseDto
 import com.exacta.exacta.dto.SpendingTagCreationDto
 import com.exacta.exacta.repository.SpendingRepository
@@ -26,5 +27,11 @@ class SpendingService {
 
     fun createSpendingTag(dto: SpendingTagCreationDto) {
         spendingTagRepository.save(dto.toSpendingTagEntity(dto))
+    }
+
+    fun listSpendingsByUsername(dto: SpendingListByUserNameDto): SpendingServiceListResponseDto {
+        val filteredList = listSpendings().spendingList.filter { i -> i.userName == dto.userName }
+
+        return SpendingServiceListResponseDto(filteredList)
     }
 }

@@ -1,6 +1,7 @@
 package com.exacta.exacta.controller
 
 import com.exacta.exacta.dto.SpendingCreationDto
+import com.exacta.exacta.dto.SpendingListByUserNameDto
 import com.exacta.exacta.dto.SpendingServiceListResponseDto
 import com.exacta.exacta.dto.SpendingTagCreationDto
 import com.exacta.exacta.entity.Spending
@@ -29,8 +30,12 @@ class SpendController {
     }
 
     @GetMapping("/list")
-    fun listSpending(): SpendingServiceListResponseDto {
-        return spendingService.listSpendings()
+    fun listSpending(@RequestBody(required = false) dto: SpendingListByUserNameDto?): SpendingServiceListResponseDto {
+        if (dto == null){
+            return spendingService.listSpendings()
+        }else{
+            return spendingService.listSpendingsByUsername(dto)
+        }
     }
 
     @RequestMapping("/tag/create")
