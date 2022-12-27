@@ -8,10 +8,7 @@ import com.exacta.exacta.entity.Spending
 import com.exacta.exacta.service.SpendingService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/spending")
@@ -29,7 +26,7 @@ class SpendController {
          spendingService.createSpending(dto)
     }
 
-    @GetMapping("/list")
+    @PostMapping("/list")
     fun listSpending(@RequestBody(required = false) dto: SpendingListByUserNameDto?): SpendingServiceListResponseDto {
         if (dto == null){
             return spendingService.listSpendings()
