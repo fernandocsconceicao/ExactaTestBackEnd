@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "8f7ebbcd-08d7-4066-8ca8-11aea5a101a3",
+		"name": "SpendingBFF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar Todos os Gastos (Tela)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/spending/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"spending",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Gastos por Username (Tela)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/spending/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"spending",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
