@@ -1,7 +1,6 @@
 package com.exacta.exacta.entity
 
 import java.math.BigDecimal
-import java.time.Instant
 import java.util.*
 import javax.persistence.*
 
@@ -17,6 +16,6 @@ data class Spending(
         val spendingDate: Date,
         val value: BigDecimal,
         @OneToMany(fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
-        val tags: Collection<SpendingTag>?){
+        val tags: Collection<SpendingTag>?) {
 
 }

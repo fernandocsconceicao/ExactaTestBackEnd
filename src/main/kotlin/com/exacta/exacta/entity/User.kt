@@ -10,4 +10,4 @@ data class User(
         @GeneratedValue
         val id: Long?,
         val name: String,
-      )
+)
