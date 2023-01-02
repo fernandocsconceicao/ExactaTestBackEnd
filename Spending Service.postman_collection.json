@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cc280113-e0ff-4fd2-add8-b1f21c71988f",
+		"_postman_id": "15f18bc5-940e-4bc9-88d3-8e0f140eb877",
 		"name": "Spending Service",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -38,12 +38,9 @@
 			"response": []
 		},
 		{
-			"name": "List",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Listagem sem filtro de usuario",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -70,12 +67,9 @@
 			"response": []
 		},
 		{
-			"name": "List ByUsername",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Listagem com filtro de usuario",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
